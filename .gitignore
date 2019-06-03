@@ -34,4 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 
-/src/main/resources/application.properties
+
+resources/application.properties
+
