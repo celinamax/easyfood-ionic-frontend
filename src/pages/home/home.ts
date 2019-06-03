@@ -12,4 +12,8 @@ export class HomePage {
 
   }
 
+  login() {
+    this.navCtrl.setRoot('CategoriasPage');//metodo de navegaçao entre as paginas HomePage e CategoriasPage
+  }
+
 }
