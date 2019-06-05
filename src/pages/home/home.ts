@@ -15,27 +15,37 @@ export class HomePage {
     email: "",
     senha: ""
   };
+
   constructor(
     public navCtrl: NavController, 
     public menu: MenuController,
     public auth: AuthService) {
-  }  
+
+  }
 
   ionViewWillEnter() {
     this.menu.swipeEnable(false);
   }
-    ionViewDidLeave() {
+    
+  ionViewDidLeave() {
     this.menu.swipeEnable(true);
-    }
+  }
+
+  ionViewDidEnter() {
+    this.auth.refreshToken()
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('CategoriasPage');
+      },
+      error => {});  
+  }
 
   login() {
     this.auth.authenticate(this.creds)
-    .subscribe(response => {
-      this.auth.sucessfulLogin(response.headers.get('Authorization'));
-      this.navCtrl.setRoot('CategoriasPage');//metodo de navegaçao entre as paginas HomePage e CategoriasPage
-    },
-    error => {});
-    
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('CategoriasPage');
+      },
+      error => {});    
   }
-
 }

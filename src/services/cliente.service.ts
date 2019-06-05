@@ -19,5 +19,4 @@ export class ClienteService {
         let url = `${API_CONFIG.bucketBaseUrl}/cp${id}.jpg`
         return this.http.get(url, {responseType : 'blob'});
     }
-
 }
