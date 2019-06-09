@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { StorageService } from '../storage.service';
-import { Cart } from "./cart";
+import { Cart } from "../../models/cart";
 import { ProdutoDTO } from '../../models/produto.dto';
 import { IfObservable } from "rxjs/observable/IfObservable";
 

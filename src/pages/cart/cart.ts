@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CartItem } from '../../services/domain/cart-item';
-import { Cart } from '../../services/domain/cart';
+import { CartItem } from '../../models/cart-item';
+import { Cart } from '../../models/cart';
 import { ProdutoService } from '../../services/domain/produto.service';
 import { API_CONFIG } from '../../config/api.config';
 import { CartService } from '../../services/domain/cart.service';
