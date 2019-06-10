@@ -6,8 +6,6 @@ import { ClienteService } from '../../services/cliente.service';
 import { CartService } from '../../services/domain/cart.service';
 import { PedidoDTO } from '../../models/pedido.dto';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-pick-address',
