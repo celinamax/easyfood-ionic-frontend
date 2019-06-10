@@ -23,9 +23,8 @@ export class ProfilePage {
      public navParams: NavParams,
      public storage: StorageService,
      public clienteService: ClienteService,
-     public camera: Camera
-     ) {
-  }
+     public camera: Camera) {
+     }  
 
   ionViewDidLoad() {
     this.loadData();
@@ -74,6 +73,21 @@ export class ProfilePage {
        this.cameraOn = false;
       }, (err) => {
       });
+    }
+
+    sendPicture() {
+      this.clienteService.uploadPicture(this.picture)
+        .subscribe(response => {
+          this.picture = null;
+          this.loadData();
+        },
+        error => {
+
+        })
+    }
+
+    cancel() {
+      this.picture = null;
     }
 
 }
